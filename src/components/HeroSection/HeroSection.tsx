@@ -188,6 +188,53 @@ export default function HeroSection() {
     }
   }, [])
 
+  useEffect(() => {
+    const isEmbedded = window.self !== window.top
+    if (!isEmbedded) return
+
+    document.body.classList.add('hs-embedded')
+
+    const postHeight = () => {
+      const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+      )
+
+      window.parent.postMessage(
+        {
+          type: 'hs:resize',
+          height,
+        },
+        '*',
+      )
+    }
+
+    postHeight()
+
+    const resizeObserver = new ResizeObserver(postHeight)
+    resizeObserver.observe(document.body)
+
+    const mutationObserver = new MutationObserver(postHeight)
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+    })
+
+    window.addEventListener('load', postHeight)
+    window.addEventListener('resize', postHeight)
+    const intervalId = window.setInterval(postHeight, 1200)
+
+    return () => {
+      window.clearInterval(intervalId)
+      window.removeEventListener('load', postHeight)
+      window.removeEventListener('resize', postHeight)
+      resizeObserver.disconnect()
+      mutationObserver.disconnect()
+      document.body.classList.remove('hs-embedded')
+    }
+  }, [])
+
   return (
     <>
       <div className="hs-page-shell" ref={pageRef}>

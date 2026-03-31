@@ -770,13 +770,6 @@
     box-shadow: 0 12px 30px rgba(16, 24, 40, 0.16);
   }
 
-  /* On small screens (especially when embedded in iframes), avoid a fully fixed bar
-     which some containers can clip; use sticky so it remains visible when scrolled. */
-  .hs-offerBar {
-    position: sticky;
-    bottom: 0;
-  }
-
   .hs-offerBar {
     padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
   }
@@ -904,5 +897,15 @@
     max-width: none;
     font-size: 11px;
   }
+}
+
+/* In embedded contexts (e.g. WordPress iframe), keep the bar in normal flow
+   so host container clipping does not hide it on mobile browsers. */
+body.hs-embedded .hs-page-shell {
+  padding-bottom: 24px;
+}
+
+body.hs-embedded .hs-offerBar {
+  position: static;
 }
 
