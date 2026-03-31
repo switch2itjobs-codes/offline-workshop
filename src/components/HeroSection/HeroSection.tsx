@@ -7,11 +7,11 @@ const HERO_LOGO_SRC =
   'http://switch2itjobs.com/wp-content/uploads/2026/03/Offline-Workshop.png'
 
 const SUPPORT_VIDEO_INSTRUCTORS_SRC =
-  'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-31-WEBSITE-2.mov'
+  'http://switch2itjobs.com/wp-content/uploads/2026/03/Sit-April-2-web.mov'
 const SUPPORT_VIDEO_MENTORS_SRC =
-  'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-31-WEBSITE-3.mov'
+  'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-30TH-WEBSITE-3.mov'
 const SUPPORT_VIDEO_COACH_SRC =
-  'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-30TH-WEBSITE-1.mov'
+  'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-31-WEBSITE-3-1.mov'
 
 const PLACEMENT_LOGOS = [
   'http://switch2itjobs.com/wp-content/uploads/2026/03/1.png',
