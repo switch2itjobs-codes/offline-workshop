@@ -162,17 +162,6 @@ function Pill({
 
 export default function HeroSection() {
   const pageRef = useRef<HTMLDivElement | null>(null)
-  const isEmbedded =
-    typeof window !== 'undefined' &&
-    (() => {
-      const forcedEmbedMode = new URLSearchParams(window.location.search).has('embed')
-      if (forcedEmbedMode) return true
-      try {
-        return window.self !== window.top
-      } catch {
-        return true
-      }
-    })()
 
   useEffect(() => {
     const el = pageRef.current
@@ -201,7 +190,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className={`hs-page-shell${isEmbedded ? ' hs-page-shell--embedded' : ''}`} ref={pageRef}>
+      <div className="hs-page-shell" ref={pageRef}>
         <div className="hs-blob hs-blob--right" aria-hidden />
 
         <div className="hs-page">
@@ -352,7 +341,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className={`hs-offerBar${isEmbedded ? ' hs-offerBar--embedded' : ''}`}>
+      <div className="hs-offerBar">
         <div className="hs-offerBarInner">
           <div className="hs-priceLeft">
             <div className="hs-priceLine">
