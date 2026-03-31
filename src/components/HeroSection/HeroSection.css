@@ -770,6 +770,13 @@
     box-shadow: 0 12px 30px rgba(16, 24, 40, 0.16);
   }
 
+  /* On small screens (especially when embedded in iframes), avoid a fully fixed bar
+     which some containers can clip; use sticky so it remains visible when scrolled. */
+  .hs-offerBar {
+    position: sticky;
+    bottom: 0;
+  }
+
   .hs-offerBar {
     padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
   }
