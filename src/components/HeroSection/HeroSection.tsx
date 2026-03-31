@@ -163,7 +163,10 @@ function Pill({
 export default function HeroSection() {
   const pageRef = useRef<HTMLDivElement | null>(null)
   const isEmbedded =
-    typeof window !== 'undefined' && (() => {
+    typeof window !== 'undefined' &&
+    (() => {
+      const forcedEmbedMode = new URLSearchParams(window.location.search).has('embed')
+      if (forcedEmbedMode) return true
       try {
         return window.self !== window.top
       } catch {
