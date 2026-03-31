@@ -255,7 +255,7 @@ export default function HeroSection() {
             <div className="hs-videoWrap">
               <div className="hs-videoAspect">
                 <video
-                  src="http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-31-WEBSITE-2.mov"
+                  src="http://switch2itjobs.com/wp-content/uploads/2026/03/sit-april-1-5555555.mov"
                   autoPlay
                   loop
                   muted
