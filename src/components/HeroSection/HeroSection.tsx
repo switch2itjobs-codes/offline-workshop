@@ -7,7 +7,7 @@ const HERO_LOGO_SRC =
   'http://switch2itjobs.com/wp-content/uploads/2026/03/Offline-Workshop.png'
 
 const SUPPORT_VIDEO_INSTRUCTORS_SRC =
-  'http://switch2itjobs.com/wp-content/uploads/2026/03/Sit-April-2-web.mov'
+  'http://switch2itjobs.com/wp-content/uploads/2026/03/sit-april-square-1-.mov'
 const SUPPORT_VIDEO_MENTORS_SRC =
   'http://switch2itjobs.com/wp-content/uploads/2026/03/SIT-MARCH-30TH-WEBSITE-3.mov'
 const SUPPORT_VIDEO_COACH_SRC =
