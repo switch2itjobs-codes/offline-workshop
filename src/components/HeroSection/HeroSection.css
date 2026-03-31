@@ -554,12 +554,16 @@
 }
 
 .hs-offerBarInner {
-  width: min(600px, calc(100% - 24px));
+  width: 100%;
   padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
+  border-style: none;
+  border-width: 0px;
+  border-color: rgba(0, 0, 0, 0);
+  border-image: none;
 }
 
 .hs-priceLeft {
@@ -575,7 +579,7 @@
 
 .hs-currentPrice {
   font-weight: 900;
-  font-size: 32px;
+  font-size: 36px;
   color: #7a3dff;
   border-width: 0px;
   padding-top: 6px;
@@ -775,7 +779,7 @@
   }
 
   .hs-offerBarInner {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 0 12px;
     gap: 10px;
     flex-direction: column;
