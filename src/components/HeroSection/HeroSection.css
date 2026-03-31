@@ -899,13 +899,3 @@
   }
 }
 
-/* In embedded contexts (e.g. WordPress iframe), keep the bar in normal flow
-   so host container clipping does not hide it on mobile browsers. */
-body.hs-embedded .hs-page-shell {
-  padding-bottom: 24px;
-}
-
-body.hs-embedded .hs-offerBar {
-  position: static;
-}
-
