@@ -234,6 +234,21 @@ export default function HeroSection() {
                 <Pill icon={<LocationIcon />}>Gachibowli</Pill>
               </div>
             </div>
+            <div className="hs-offerBarInner">
+              <div className="hs-priceLeft">
+                <div className="hs-priceLine">
+                  <span className="hs-currentPrice">₹499</span>
+                  <span className="hs-oldPrice">₹1,999</span>
+                </div>
+              </div>
+
+              <a
+                className="hs-joinBtn"
+                href="https://switch2itjobs.com/checkout/?add-to-cart=9783"
+              >
+                Register Now
+              </a>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delayMs={360} className="hs-reveal--video">
@@ -339,6 +354,23 @@ export default function HeroSection() {
           </ScrollReveal>
 
           </div>
+        </div>
+      </div>
+      <div className="hs-offerBar">
+        <div className="hs-offerBarInner">
+          <div className="hs-priceLeft">
+            <div className="hs-priceLine">
+              <span className="hs-currentPrice">₹499</span>
+              <span className="hs-oldPrice">₹1,999</span>
+            </div>
+          </div>
+
+          <a
+            className="hs-joinBtn"
+            href="https://switch2itjobs.com/checkout/?add-to-cart=9783"
+          >
+            Register Now
+          </a>
         </div>
       </div>
     </>
