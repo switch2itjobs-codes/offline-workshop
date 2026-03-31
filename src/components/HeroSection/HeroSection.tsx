@@ -162,6 +162,14 @@ function Pill({
 
 export default function HeroSection() {
   const pageRef = useRef<HTMLDivElement | null>(null)
+  const isEmbedded =
+    typeof window !== 'undefined' && (() => {
+      try {
+        return window.self !== window.top
+      } catch {
+        return true
+      }
+    })()
 
   useEffect(() => {
     const el = pageRef.current
@@ -188,56 +196,9 @@ export default function HeroSection() {
     }
   }, [])
 
-  useEffect(() => {
-    const isEmbedded = window.self !== window.top
-    if (!isEmbedded) return
-
-    document.body.classList.add('hs-embedded')
-
-    const postHeight = () => {
-      const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-      )
-
-      window.parent.postMessage(
-        {
-          type: 'hs:resize',
-          height,
-        },
-        '*',
-      )
-    }
-
-    postHeight()
-
-    const resizeObserver = new ResizeObserver(postHeight)
-    resizeObserver.observe(document.body)
-
-    const mutationObserver = new MutationObserver(postHeight)
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-    })
-
-    window.addEventListener('load', postHeight)
-    window.addEventListener('resize', postHeight)
-    const intervalId = window.setInterval(postHeight, 1200)
-
-    return () => {
-      window.clearInterval(intervalId)
-      window.removeEventListener('load', postHeight)
-      window.removeEventListener('resize', postHeight)
-      resizeObserver.disconnect()
-      mutationObserver.disconnect()
-      document.body.classList.remove('hs-embedded')
-    }
-  }, [])
-
   return (
     <>
-      <div className="hs-page-shell" ref={pageRef}>
+      <div className={`hs-page-shell${isEmbedded ? ' hs-page-shell--embedded' : ''}`} ref={pageRef}>
         <div className="hs-blob hs-blob--right" aria-hidden />
 
         <div className="hs-page">
@@ -388,7 +349,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="hs-offerBar">
+      <div className={`hs-offerBar${isEmbedded ? ' hs-offerBar--embedded' : ''}`}>
         <div className="hs-offerBarInner">
           <div className="hs-priceLeft">
             <div className="hs-priceLine">
